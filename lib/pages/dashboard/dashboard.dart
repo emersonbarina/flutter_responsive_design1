@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/header_widget.dart';
+import 'package:flutter_responsive_design1/pages/dashboard/widget/notification_card_widget.dart';
 
 import '../../common/app_colors.dart';
 
@@ -21,9 +22,28 @@ class _DashboardState extends State<Dashboard> {
         borderRadius: BorderRadius.circular(15),
       ),
       child: Column(
-        children: const [
+        children: [
           /// Header Part
-          HeaderWidget(),
+          const HeaderWidget(),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    child: Column(
+                      children: const [
+                        NotificationCardWidget(),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Column(),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
