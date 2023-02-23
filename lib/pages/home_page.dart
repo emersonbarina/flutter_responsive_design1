@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_responsive_design1/pages/dashboard/dashboard.dart';
 import 'package:flutter_responsive_design1/pages/widget/side_bar_menu.dart';
 
 import '../common/app_colors.dart';
@@ -18,16 +19,16 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             /// Side Navigation Menu
-            const Expanded(
+            Expanded(
               child: SideBarMenu(),
             ),
 
             /// Main Body Part
             Expanded(
               flex: 4,
-              child: Container(),
+              child: Dashboard(),
             ),
           ],
         ),
