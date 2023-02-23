@@ -22,6 +22,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
               fontWeight: FontWeight.bold,
             ),
           ),
+          const Spacer(),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
