@@ -33,33 +33,35 @@ class _SideBarMenuState extends State<SideBarMenu> {
             DrawerListTile(
               title: "Dashboard",
               icon: "assets/menu_home.png",
-              press: (){},
+              press: () {},
             ),
             DrawerListTile(
               title: "Recruitment",
               icon: "assets/menu_recruitment.png",
-              press: (){},
+              press: () {},
             ),
             DrawerListTile(
               title: "OnBoarding",
               icon: "assets/menu_onboarding.png",
-              press: (){},
+              press: () {},
             ),
             DrawerListTile(
               title: "Reports",
               icon: "assets/menu_report.png",
-              press: (){},
+              press: () {},
             ),
             DrawerListTile(
               title: "Calendar",
               icon: "assets/menu_calendar.png",
-              press: (){},
+              press: () {},
             ),
             DrawerListTile(
               title: "Settings",
               icon: "assets/menu_settings.png",
-              press: (){},
+              press: () {},
             ),
+            Spacer(),
+            Image.asset("assets/sidebar_image.png")
           ],
         ),
       ),
@@ -82,10 +84,13 @@ class DrawerListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {
-        press;
-      },
-      leading: Image.asset(icon),
+      onTap: press,
+      horizontalTitleGap: 0.0,
+      leading: Image.asset(
+        icon,
+        color: AppColor.white,
+        height: 16,
+      ),
       title: Text(
         title,
         style: TextStyle(color: AppColor.white),
