@@ -19,16 +19,76 @@ class _SideBarMenuState extends State<SideBarMenu> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Web Design 1",
-              style: TextStyle(
-                color: AppColor.yellow,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Text(
+                "Web Design 1",
+                style: TextStyle(
+                  color: AppColor.yellow,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+            ),
+            DrawerListTile(
+              title: "Dashboard",
+              icon: "assets/menu_home.png",
+              press: (){},
+            ),
+            DrawerListTile(
+              title: "Recruitment",
+              icon: "assets/menu_recruitment.png",
+              press: (){},
+            ),
+            DrawerListTile(
+              title: "OnBoarding",
+              icon: "assets/menu_onboarding.png",
+              press: (){},
+            ),
+            DrawerListTile(
+              title: "Reports",
+              icon: "assets/menu_report.png",
+              press: (){},
+            ),
+            DrawerListTile(
+              title: "Calendar",
+              icon: "assets/menu_calendar.png",
+              press: (){},
+            ),
+            DrawerListTile(
+              title: "Settings",
+              icon: "assets/menu_settings.png",
+              press: (){},
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class DrawerListTile extends StatelessWidget {
+  const DrawerListTile({
+    Key? key,
+    required this.title,
+    required this.icon,
+    required this.press,
+  }) : super(key: key);
+
+  final String title;
+  final String icon;
+  final VoidCallback press;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: () {
+        press;
+      },
+      leading: Image.asset(icon),
+      title: Text(
+        title,
+        style: TextStyle(color: AppColor.white),
       ),
     );
   }
