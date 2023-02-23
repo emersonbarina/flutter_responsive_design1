@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/header_widget.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/notification_card_widget.dart';
+import 'package:flutter_responsive_design1/pages/dashboard/widget/recruitment_data_widget.dart';
 
 import '../../common/app_colors.dart';
 
@@ -34,6 +35,10 @@ class _DashboardState extends State<Dashboard> {
                     child: Column(
                       children: const [
                         NotificationCardWidget(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        RecruitmentDataWidget(),
                       ],
                     ),
                   ),
