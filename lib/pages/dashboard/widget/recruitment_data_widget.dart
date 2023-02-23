@@ -17,7 +17,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
         borderRadius: BorderRadius.circular(15),
         color: AppColor.white,
       ),
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         children: [
           Row(
@@ -49,7 +49,45 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
               ),
             ],
           ),
+          const Divider(
+            thickness: 0.5,
+            color: Colors.grey,
+          ),
+          Table(
+            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+            children: [
+              TableRow(
+                decoration: const BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: Colors.grey,
+                      width: 0.5,
+                    ),
+                  ),
+                ),
+                children: [
+                  tableHeader("Full Name"),
+                  tableHeader("Designation"),
+                  tableHeader("Status"),
+                  tableHeader(""),
+                ],
+              )
+            ],
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget tableHeader(String text) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 15),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: AppColor.black,
+        ),
       ),
     );
   }
