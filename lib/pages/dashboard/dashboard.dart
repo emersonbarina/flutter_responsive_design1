@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_responsive_design1/pages/dashboard/widget/calendar_widget.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/header_widget.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/notification_card_widget.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/recruitment_data_widget.dart';
@@ -27,26 +28,31 @@ class _DashboardState extends State<Dashboard> {
           /// Header Part
           const HeaderWidget(),
           Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    child: Column(
-                      children: const [
-                        NotificationCardWidget(),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        RecruitmentDataWidget(),
-                      ],
+            child: SingleChildScrollView(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      child: Column(
+                        children: const [
+                          NotificationCardWidget(),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          RecruitmentDataWidget(),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Column(),
-                ),
-              ],
+                  Expanded(
+                    child: Container(
+                      child: const CalendarWidget(),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
