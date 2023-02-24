@@ -56,6 +56,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
           Table(
             defaultVerticalAlignment: TableCellVerticalAlignment.middle,
             children: [
+              /// Table Header
               TableRow(
                 decoration: const BoxDecoration(
                   border: Border(
@@ -71,11 +72,104 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
                   tableHeader("Status"),
                   tableHeader(""),
                 ],
-              )
+              ),
+
+              /// Table Data
+              tableRow(
+                context,
+                name: "Mary G Lolus",
+                color: Colors.blue,
+                image: "assets/user1.jpg",
+                designation: "Project Manager",
+                status: "Practical Round",
+              ),
+              tableRow(
+                context,
+                name: "Vince Jacob",
+                color: Colors.blue,
+                image: "assets/user2.jpg",
+                designation: "UI/UX Designer",
+                status: "Practical Round",
+              ),
+              tableRow(
+                context,
+                name: "Nell Brian",
+                color: Colors.green,
+                image: "assets/user3.jpg",
+                designation: "React Developer",
+                status: "Final Round",
+              ),
+              tableRow(
+                context,
+                name: "Vince Jacob",
+                color: Colors.yellow,
+                image: "assets/user2.jpg",
+                designation: "UI/UX Designer",
+                status: "HR Round",
+              ),
+
             ],
           ),
         ],
       ),
+    );
+  }
+
+  TableRow tableRow(context,{name, image, designation, status, color}){
+    return TableRow(
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.grey,
+            width: 0.5,
+          ),
+        ),
+      ),
+      children: [
+        // Full Name
+        Container(
+          margin: const EdgeInsets.symmetric(vertical: 15),
+          child: Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(1000),
+                child: Image.asset(
+                  image,
+                  width: 30,
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Text(name),
+            ],
+          ),
+        ),
+        // Designation
+        Text(designation),
+        // Status
+        Row(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: color,
+              ),
+              height: 10,
+              width: 10,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(status),
+          ],
+        ),
+        Image.asset(
+          "assets/more.png",
+          color: Colors.grey,
+          height: 30,
+        ),
+      ],
     );
   }
 
