@@ -107,15 +107,30 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
                 designation: "UI/UX Designer",
                 status: "HR Round",
               ),
-
             ],
+          ),
+          /// Footer
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text("Showing 4 out of 4 Results"),
+                Text(
+                  "View All",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  TableRow tableRow(context,{name, image, designation, status, color}){
+  TableRow tableRow(context, {name, image, designation, status, color}) {
     return TableRow(
       decoration: const BoxDecoration(
         border: Border(
