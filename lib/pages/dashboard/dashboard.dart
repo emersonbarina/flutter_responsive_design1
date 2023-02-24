@@ -48,7 +48,13 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   Expanded(
                     child: Container(
-                      child: const CalendarWidget(),
+                      margin: const EdgeInsets.symmetric(horizontal: 10,),
+                      child: Column(
+                        children: const [
+                          CalendarWidget(),
+                          SizedBox(height: 20,),
+                        ],
+                      ),
                     ),
                   ),
                 ],
