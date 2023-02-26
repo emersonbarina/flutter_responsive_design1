@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_responsive_design1/common/app_colors.dart';
 import 'package:intl/intl.dart';
@@ -97,13 +95,13 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 shape: BoxShape.circle,
               ),
             ),
-            eventLoader: (day){
+            /*eventLoader: (day){
               if(day.day == 22 || day.day == 12) {
                 return [Event("Event name", canBubble: true)];
               }
               return [];
 
-            },
+            },*/
           ),
         ],
       ),
