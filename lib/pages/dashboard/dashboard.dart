@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_responsive_design1/common/app_responsive.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/calendar_widget.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/header_widget.dart';
 import 'package:flutter_responsive_design1/pages/dashboard/widget/notification_card_widget.dart';
@@ -37,16 +38,23 @@ class _DashboardState extends State<Dashboard> {
                     flex: 2,
                     child: Container(
                       child: Column(
-                        children: const [
+                        children: [
                           NotificationCardWidget(),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          RecruitmentDataWidget(),
+                          if(AppResponsive.isMobile(context)) ... {
+                            const CalendarWidget(),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                          },
+                          const RecruitmentDataWidget(),
                         ],
                       ),
                     ),
                   ),
+                  if(!AppResponsive.isMobile(context))
                   Expanded(
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 10,),

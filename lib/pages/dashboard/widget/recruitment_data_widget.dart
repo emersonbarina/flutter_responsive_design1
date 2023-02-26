@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_responsive_design1/common/app_responsive.dart';
 
 import '../../../common/app_colors.dart';
 
@@ -68,9 +69,11 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
                 ),
                 children: [
                   tableHeader("Full Name"),
-                  tableHeader("Designation"),
+                  if (!AppResponsive.isMobile(context))
+                    tableHeader("Designation"),
                   tableHeader("Status"),
-                  tableHeader(""),
+                  if (!AppResponsive.isMobile(context))
+                    tableHeader(""),
                 ],
               ),
 
@@ -161,7 +164,8 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
           ),
         ),
         // Designation
-        Text(designation),
+        if (!AppResponsive.isMobile(context))
+          Text(designation),
         // Status
         Row(
           children: [
@@ -179,11 +183,12 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
             Text(status),
           ],
         ),
-        Image.asset(
-          "assets/more.png",
-          color: Colors.grey,
-          height: 30,
-        ),
+        if (!AppResponsive.isMobile(context))
+          Image.asset(
+            "assets/more.png",
+            color: Colors.grey,
+            height: 30,
+          ),
       ],
     );
   }

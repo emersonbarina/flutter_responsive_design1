@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_responsive_design1/common/app_responsive.dart';
 
 import '../../../common/app_colors.dart';
 
@@ -63,11 +64,14 @@ class _NotificationCardWidgetState extends State<NotificationCardWidget> {
               )
             ],
           ),
-          const Spacer(),
-          Image.asset(
-            "assets/notification_image.png",
-            height: 160,
-          ),
+          if ((MediaQuery.of(context).size.width >= 620 && AppResponsive.isMobile(context)) ||
+              (MediaQuery.of(context).size.width >= 1120 && AppResponsive.isDesktop(context))) ...{
+            const Spacer(),
+            Image.asset(
+              "assets/notification_image.png",
+              height: 160,
+            ),
+          }
         ],
       ),
     );
